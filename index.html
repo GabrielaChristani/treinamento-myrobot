@@ -1,0 +1,1918 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MYROBOT - Treinamento para Vendedores</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .quiz-option {
+            transition: all 0.3s ease;
+        }
+        .quiz-option:hover {
+            background-color: #f3f4f6;
+            transform: scale(1.02);
+        }
+        .quiz-option.selected {
+            background-color: #3b82f6;
+            color: white;
+        }
+        .quiz-option.correct {
+            background-color: #10b981;
+            color: white;
+        }
+        .quiz-option.incorrect {
+            background-color: #ef4444;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Header -->
+    <header class="gradient-bg text-white py-6 shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center">
+                        <span class="text-2xl">🤖</span>
+                    </div>
+                    <div>
+                        <h1 class="text-3xl font-bold">MYROBOT</h1>
+                        <p class="text-blue-100">Treinamento para Vendedores</p>
+                    </div>
+                </div>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="#metodologia" class="hover:text-blue-200 transition-colors">Metodologia</a>
+                    <a href="#cursos" class="hover:text-blue-200 transition-colors">Cursos</a>
+                    <a href="#historia" class="hover:text-blue-200 transition-colors">História</a>
+                    <a href="#exercicios" class="hover:text-blue-200 transition-colors">Exercícios</a>
+                    <a href="#experimental" class="hover:text-blue-200 transition-colors">Aula Experimental</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-5xl font-bold text-gray-800 mb-6">
+                Domine a Venda de Cursos de<br>
+                <span class="text-blue-600">Robótica e Programação</span>
+            </h2>
+            <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                Aprenda tudo sobre nossos cursos, metodologia e como apresentar as aulas experimentais para conquistar mais alunos!
+            </p>
+            <button onclick="scrollToSection('metodologia')" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors shadow-lg">
+                Começar Treinamento
+            </button>
+        </div>
+    </section>
+
+    <!-- Nossa Metodologia -->
+    <section id="metodologia" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Nossa Metodologia</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg card-hover text-center">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl">🎮</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Aprender Brincando</h3>
+                    <p class="text-gray-600">
+                        Nossas aulas combinam diversão e aprendizado, tornando conceitos complexos acessíveis e envolventes.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg card-hover text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl">🔧</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Projetos Práticos</h3>
+                    <p class="text-gray-600">
+                        Cada aula envolve montagem de projetos temáticos, programação e desafios que estimulam a criatividade.
+                    </p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-lg card-hover text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-3xl">🏆</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Certificação</h3>
+                    <p class="text-gray-600">
+                        Ao final de cada módulo, os alunos recebem certificados que reconhecem suas conquistas e habilidades.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nossos Cursos -->
+    <section id="cursos" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-4">Nossos Cursos</h2>
+            <p class="text-center text-gray-600 mb-12 text-lg">
+                Cada curso foi desenvolvido para estimular habilidades específicas, com aulas de 2 horas semanais e material didático exclusivo.
+            </p>
+            
+            <div class="space-y-12">
+                <!-- FirstBot -->
+                <div class="bg-gradient-to-br from-pink-50 via-purple-50 to-indigo-50 p-8 rounded-2xl shadow-xl border-2 border-pink-200 card-hover">
+                    <div class="grid lg:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="text-8xl mb-4">👶</div>
+                            <div class="bg-pink-100 px-4 py-2 rounded-full inline-block">
+                                <span class="text-pink-700 font-bold">5-7 anos</span>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-2">
+                            <h3 class="text-4xl font-bold text-gray-800 mb-3">FirstBot</h3>
+                            <p class="text-xl text-pink-700 font-semibold mb-4">Iniciação à Programação com Cartões</p>
+                            <p class="text-gray-700 mb-6 text-lg">
+                                O primeiro passo no mundo da tecnologia! Utilizando peças seguras e coloridas, 
+                                as crianças aprendem lógica de programação através de cartões visuais.
+                            </p>
+                            
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <div class="bg-white p-4 rounded-xl shadow-sm">
+                                    <h4 class="font-bold text-gray-800 mb-3 flex items-center">
+                                        <span class="text-2xl mr-2">🧩</span> O que a criança aprende:
+                                    </h4>
+                                    <ul class="text-gray-600 space-y-2">
+                                        <li>• Sequência lógica e algoritmos básicos</li>
+                                        <li>• Coordenação motora fina</li>
+                                        <li>• Resolução de problemas simples</li>
+                                        <li>• Conceitos de causa e efeito</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-white p-4 rounded-xl shadow-sm">
+                                    <h4 class="font-bold text-gray-800 mb-3 flex items-center">
+                                        <span class="text-2xl mr-2">🎯</span> Projetos práticos:
+                                    </h4>
+                                    <ul class="text-gray-600 space-y-2">
+                                        <li>• Robô que segue comandos</li>
+                                        <li>• Labirinto com obstáculos</li>
+                                        <li>• Dança programada</li>
+                                        <li>• Histórias interativas</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gradient-to-r from-pink-100 to-purple-100 p-6 rounded-xl">
+                                <h4 class="font-bold text-gray-800 mb-3 text-xl">💰 Investimento:</h4>
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div>
+                                        <p class="text-lg font-semibold text-pink-700">Curso completo: 12x de R$ 299</p>
+                                        <p class="text-sm text-gray-600">Inclui todas as aulas e certificação</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-lg font-semibold text-purple-700">Apostilas: R$ 149 cada</p>
+                                        <p class="text-sm text-gray-600">3 volumes (Inicial, Intermediário, Avançado)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- OneBot -->
+                <div class="bg-gradient-to-br from-blue-50 via-cyan-50 to-teal-50 p-8 rounded-2xl shadow-xl border-2 border-blue-200 card-hover">
+                    <div class="grid lg:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="text-8xl mb-4">🧒</div>
+                            <div class="bg-blue-100 px-4 py-2 rounded-full inline-block">
+                                <span class="text-blue-700 font-bold">8-10 anos</span>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-2">
+                            <h3 class="text-4xl font-bold text-gray-800 mb-3">OneBot</h3>
+                            <p class="text-xl text-blue-700 font-semibold mb-4">Robótica com Programação em Blocos e Sensores</p>
+                            <p class="text-gray-700 mb-6 text-lg">
+                                Evolução natural do FirstBot! As crianças começam a usar o computador para programar 
+                                robôs com sensores e criar projetos mais complexos.
+                            </p>
+                            
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <div class="bg-white p-4 rounded-xl shadow-sm">
+                                    <h4 class="font-bold text-gray-800 mb-3 flex items-center">
+                                        <span class="text-2xl mr-2">🔍</span> O que a criança aprende:
+                                    </h4>
+                                    <ul class="text-gray-600 space-y-2">
+                                        <li>• Programação visual em blocos</li>
+                                        <li>• Uso de sensores (luz, som, toque)</li>
+                                        <li>• Lógica condicional (se/então)</li>
+                                        <li>• Loops e repetições</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-white p-4 rounded-xl shadow-sm">
+                                    <h4 class="font-bold text-gray-800 mb-3 flex items-center">
+                                        <span class="text-2xl mr-2">🤖</span> Projetos práticos:
+                                    </h4>
+                                    <ul class="text-gray-600 space-y-2">
+                                        <li>• Robô seguidor de linha</li>
+                                        <li>• Alarme com sensor de movimento</li>
+                                        <li>• Pet virtual interativo</li>
+                                        <li>• Semáforo inteligente</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gradient-to-r from-blue-100 to-cyan-100 p-6 rounded-xl">
+                                <h4 class="font-bold text-gray-800 mb-3 text-xl">💰 Investimento:</h4>
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div>
+                                        <p class="text-lg font-semibold text-blue-700">Curso completo: 12x de R$ 299</p>
+                                        <p class="text-sm text-gray-600">Inclui todas as aulas e certificação</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-lg font-semibold text-cyan-700">Apostilas: R$ 149 cada</p>
+                                        <p class="text-sm text-gray-600">3 volumes (Inicial, Intermediário, Avançado)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TechBot -->
+                <div class="bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 p-8 rounded-2xl shadow-xl border-2 border-green-200 card-hover">
+                    <div class="grid lg:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="text-8xl mb-4">👨‍💻</div>
+                            <div class="bg-green-100 px-4 py-2 rounded-full inline-block">
+                                <span class="text-green-700 font-bold">11-13 anos</span>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-2">
+                            <h3 class="text-4xl font-bold text-gray-800 mb-3">TechBot</h3>
+                            <p class="text-xl text-green-700 font-semibold mb-4">Robótica com Componentes Reais e Linguagem C</p>
+                            <p class="text-gray-700 mb-6 text-lg">
+                                Nível intermediário com componentes reais! Introdução ao uso de ferramentas, 
+                                parafusos e programação baseada em linguagem C.
+                            </p>
+                            
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <div class="bg-white p-4 rounded-xl shadow-sm">
+                                    <h4 class="font-bold text-gray-800 mb-3 flex items-center">
+                                        <span class="text-2xl mr-2">⚙️</span> O que a criança aprende:
+                                    </h4>
+                                    <ul class="text-gray-600 space-y-2">
+                                        <li>• Montagem mecânica com ferramentas</li>
+                                        <li>• Programação baseada em C</li>
+                                        <li>• Estruturas de controle avançadas</li>
+                                        <li>• Trabalho em equipe e projetos</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-white p-4 rounded-xl shadow-sm">
+                                    <h4 class="font-bold text-gray-800 mb-3 flex items-center">
+                                        <span class="text-2xl mr-2">🔧</span> Projetos práticos:
+                                    </h4>
+                                    <ul class="text-gray-600 space-y-2">
+                                        <li>• Braço robótico funcional</li>
+                                        <li>• Carro autônomo com GPS</li>
+                                        <li>• Sistema de automação residencial</li>
+                                        <li>• Robô explorador de terrenos</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gradient-to-r from-green-100 to-emerald-100 p-6 rounded-xl">
+                                <h4 class="font-bold text-gray-800 mb-3 text-xl">💰 Investimento:</h4>
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div>
+                                        <p class="text-lg font-semibold text-green-700">Curso completo: 12x de R$ 299</p>
+                                        <p class="text-sm text-gray-600">Inclui todas as aulas e certificação</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-lg font-semibold text-emerald-700">Apostilas: R$ 149 cada</p>
+                                        <p class="text-sm text-gray-600">3 volumes (Inicial, Intermediário, Avançado)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AutoBot -->
+                <div class="bg-gradient-to-br from-orange-50 via-red-50 to-pink-50 p-8 rounded-2xl shadow-xl border-2 border-orange-200 card-hover">
+                    <div class="grid lg:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="text-8xl mb-4">🚀</div>
+                            <div class="bg-orange-100 px-4 py-2 rounded-full inline-block">
+                                <span class="text-orange-700 font-bold">14+ anos</span>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-2">
+                            <h3 class="text-4xl font-bold text-gray-800 mb-3">AutoBot</h3>
+                            <p class="text-xl text-orange-700 font-semibold mb-4">Robótica Avançada com Arduino, C# e Processing</p>
+                            <p class="text-gray-700 mb-6 text-lg">
+                                O nível mais avançado! Programação real com Arduino, criação de circuitos eletrônicos 
+                                e desenvolvimento de projetos profissionais.
+                            </p>
+                            
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <div class="bg-white p-4 rounded-xl shadow-sm">
+                                    <h4 class="font-bold text-gray-800 mb-3 flex items-center">
+                                        <span class="text-2xl mr-2">💡</span> O que a criança aprende:
+                                    </h4>
+                                    <ul class="text-gray-600 space-y-2">
+                                        <li>• Programação em C# e Processing</li>
+                                        <li>• Eletrônica básica e circuitos</li>
+                                        <li>• Uso profissional do Arduino</li>
+                                        <li>• Desenvolvimento de aplicações</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-white p-4 rounded-xl shadow-sm">
+                                    <h4 class="font-bold text-gray-800 mb-3 flex items-center">
+                                        <span class="text-2xl mr-2">⚡</span> Projetos práticos:
+                                    </h4>
+                                    <ul class="text-gray-600 space-y-2">
+                                        <li>• Estação meteorológica IoT</li>
+                                        <li>• Sistema de segurança inteligente</li>
+                                        <li>• Aplicativo mobile para robôs</li>
+                                        <li>• Projeto final personalizado</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gradient-to-r from-orange-100 to-red-100 p-6 rounded-xl">
+                                <h4 class="font-bold text-gray-800 mb-3 text-xl">💰 Investimento:</h4>
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div>
+                                        <p class="text-lg font-semibold text-orange-700">Curso completo: 12x de R$ 299</p>
+                                        <p class="text-sm text-gray-600">Inclui todas as aulas e certificação</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-lg font-semibold text-red-700">Apostilas: R$ 149 cada</p>
+                                        <p class="text-sm text-gray-600">3 volumes (Inicial, Intermediário, Avançado)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Caneta 3D -->
+                <div class="bg-gradient-to-br from-purple-50 via-indigo-50 to-blue-50 p-8 rounded-2xl shadow-xl border-2 border-purple-200 card-hover">
+                    <div class="grid lg:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="text-8xl mb-4">✏️</div>
+                            <div class="bg-purple-100 px-4 py-2 rounded-full inline-block">
+                                <span class="text-purple-700 font-bold">Todas as idades</span>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-2">
+                            <h3 class="text-4xl font-bold text-gray-800 mb-3">Caneta 3D</h3>
+                            <p class="text-xl text-purple-700 font-semibold mb-4">Criatividade e Tecnologia em 1 Mês!</p>
+                            <p class="text-gray-700 mb-6 text-lg">
+                                Curso especial de curta duração! Explore o mundo da criação 3D de forma prática e divertida, 
+                                desenhando objetos no ar com tecnologia de ponta.
+                            </p>
+                            
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <div class="bg-white p-4 rounded-xl shadow-sm">
+                                    <h4 class="font-bold text-gray-800 mb-3 flex items-center">
+                                        <span class="text-2xl mr-2">🎨</span> O que a criança aprende:
+                                    </h4>
+                                    <ul class="text-gray-600 space-y-2">
+                                        <li>• Conceitos de design 3D</li>
+                                        <li>• Coordenação espacial</li>
+                                        <li>• Criatividade e expressão artística</li>
+                                        <li>• Planejamento de projetos</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-white p-4 rounded-xl shadow-sm">
+                                    <h4 class="font-bold text-gray-800 mb-3 flex items-center">
+                                        <span class="text-2xl mr-2">🏗️</span> Projetos práticos:
+                                    </h4>
+                                    <ul class="text-gray-600 space-y-2">
+                                        <li>• Esculturas 3D personalizadas</li>
+                                        <li>• Acessórios e bijuterias</li>
+                                        <li>• Miniaturas e maquetes</li>
+                                        <li>• Projeto final livre</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gradient-to-r from-purple-100 to-indigo-100 p-6 rounded-xl">
+                                <h4 class="font-bold text-gray-800 mb-3 text-xl">💰 Investimento:</h4>
+                                <div class="text-center">
+                                    <p class="text-2xl font-bold text-purple-700 mb-2">R$ 299 (pagamento único)</p>
+                                    <p class="text-gray-600 mb-2">Curso completo de 1 mês (4 aulas de 2h)</p>
+                                    <p class="text-sm text-green-600 font-semibold">✅ Todo material incluso!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- História da Programação -->
+    <section id="historia" class="py-16 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold text-gray-800 mb-6">📚 A História dos Métodos de Programação</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Entenda como cada método de ensino surgiu e por que nossa metodologia é tão eficaz!
+                </p>
+            </div>
+
+            <div class="max-w-6xl mx-auto space-y-12">
+                <!-- Programação Desplugada -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 border-l-4 border-pink-400">
+                    <div class="grid lg:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="text-8xl mb-4">🎴</div>
+                            <div class="bg-pink-100 px-4 py-2 rounded-full inline-block">
+                                <span class="text-pink-700 font-bold">Programação Desplugada</span>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-2">
+                            <h3 class="text-3xl font-bold text-gray-800 mb-4">Como Surgiu? (Anos 1980)</h3>
+                            <div class="space-y-4 text-gray-700">
+                                <p class="text-lg">
+                                    <strong>🎯 Criado por:</strong> Tim Bell, Mike Fellows e Ian Witten na Nova Zelândia
+                                </p>
+                                <p>
+                                    <strong>💡 O Problema:</strong> As crianças pequenas não conseguiam usar computadores, mas precisavam entender conceitos de programação.
+                                </p>
+                                <p>
+                                    <strong>🔧 A Solução:</strong> Criar atividades físicas (cartões, jogos, brincadeiras) que ensinassem lógica de programação sem usar computador.
+                                </p>
+                                <p>
+                                    <strong>🌟 Por que funciona:</strong> Crianças pequenas aprendem melhor com objetos físicos que podem tocar e manipular.
+                                </p>
+                            </div>
+                            <div class="bg-gradient-to-r from-pink-100 to-purple-100 p-4 rounded-xl mt-6">
+                                <p class="text-center font-semibold text-gray-800">
+                                    💬 "É como ensinar matemática com blocos de LEGO antes de usar números!"
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Programação Visual -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 border-l-4 border-blue-400">
+                    <div class="grid lg:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="text-8xl mb-4">🧩</div>
+                            <div class="bg-blue-100 px-4 py-2 rounded-full inline-block">
+                                <span class="text-blue-700 font-bold">Programação Visual</span>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-2">
+                            <h3 class="text-3xl font-bold text-gray-800 mb-4">Como Surgiu? (Anos 1990-2000)</h3>
+                            <div class="space-y-4 text-gray-700">
+                                <p class="text-lg">
+                                    <strong>🎯 Criado por:</strong> Seymour Papert (MIT) e depois aperfeiçoado pelo Scratch (2007)
+                                </p>
+                                <p>
+                                    <strong>💡 O Problema:</strong> Escrever código com texto era muito difícil para crianças que ainda estavam aprendendo a ler.
+                                </p>
+                                <p>
+                                    <strong>🔧 A Solução:</strong> Criar blocos coloridos que se encaixam como peças de LEGO, cada um representando um comando.
+                                </p>
+                                <p>
+                                    <strong>🌟 Por que funciona:</strong> As crianças veem imediatamente o resultado de suas ações e podem experimentar sem medo de "quebrar" algo.
+                                </p>
+                            </div>
+                            <div class="bg-gradient-to-r from-blue-100 to-cyan-100 p-4 rounded-xl mt-6">
+                                <p class="text-center font-semibold text-gray-800">
+                                    💬 "É como montar um LEGO digital - você vê as peças se encaixando!"
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Programação Baseada em Texto -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 border-l-4 border-green-400">
+                    <div class="grid lg:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="text-8xl mb-4">⌨️</div>
+                            <div class="bg-green-100 px-4 py-2 rounded-full inline-block">
+                                <span class="text-green-700 font-bold">Programação Textual</span>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-2">
+                            <h3 class="text-3xl font-bold text-gray-800 mb-4">Como Surgiu? (Anos 1950-1960)</h3>
+                            <div class="space-y-4 text-gray-700">
+                                <p class="text-lg">
+                                    <strong>🎯 Criado por:</strong> Grace Hopper e outros pioneiros da computação
+                                </p>
+                                <p>
+                                    <strong>💡 O Problema:</strong> Os primeiros computadores só entendiam números binários (0 e 1), muito difícil para humanos.
+                                </p>
+                                <p>
+                                    <strong>🔧 A Solução:</strong> Criar linguagens que usassem palavras em inglês (como "if", "while", "for") para dar comandos.
+                                </p>
+                                <p>
+                                    <strong>🌟 Por que funciona:</strong> Permite criar programas muito mais complexos e poderosos, como jogos profissionais e aplicativos.
+                                </p>
+                            </div>
+                            <div class="bg-gradient-to-r from-green-100 to-emerald-100 p-4 rounded-xl mt-6">
+                                <p class="text-center font-semibold text-gray-800">
+                                    💬 "É como aprender a escrever receitas de culinária, mas para computadores!"
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Programação com Hardware -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 border-l-4 border-orange-400">
+                    <div class="grid lg:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="text-8xl mb-4">🔧</div>
+                            <div class="bg-orange-100 px-4 py-2 rounded-full inline-block">
+                                <span class="text-orange-700 font-bold">Programação Física</span>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-2">
+                            <h3 class="text-3xl font-bold text-gray-800 mb-4">Como Surgiu? (Anos 2000-2010)</h3>
+                            <div class="space-y-4 text-gray-700">
+                                <p class="text-lg">
+                                    <strong>🎯 Criado por:</strong> Massimo Banzi (Arduino) e movimento Maker
+                                </p>
+                                <p>
+                                    <strong>💡 O Problema:</strong> A programação era muito abstrata - as crianças não viam o resultado no mundo real.
+                                </p>
+                                <p>
+                                    <strong>🔧 A Solução:</strong> Criar placas baratas (como Arduino) que conectam programação com LEDs, motores e sensores reais.
+                                </p>
+                                <p>
+                                    <strong>🌟 Por que funciona:</strong> As crianças veem suas criações se moverem, acenderem luzes e reagirem ao ambiente real.
+                                </p>
+                            </div>
+                            <div class="bg-gradient-to-r from-orange-100 to-red-100 p-4 rounded-xl mt-6">
+                                <p class="text-center font-semibold text-gray-800">
+                                    💬 "É como ser um inventor - você cria coisas que realmente funcionam no mundo real!"
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nossa Metodologia MYROBOT -->
+                <div class="bg-gradient-to-br from-purple-100 via-blue-100 to-cyan-100 rounded-2xl shadow-xl p-8 border-4 border-purple-400">
+                    <div class="text-center mb-8">
+                        <div class="text-8xl mb-4">🤖</div>
+                        <h3 class="text-4xl font-bold text-gray-800 mb-4">Nossa Metodologia MYROBOT</h3>
+                        <p class="text-xl text-purple-700 font-semibold">Combinamos o Melhor de Todos os Métodos!</p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 mb-8">
+                        <div class="bg-white p-6 rounded-xl shadow-lg">
+                            <h4 class="text-2xl font-bold text-gray-800 mb-4">🎯 Nossa Inovação</h4>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="text-pink-500 mr-3 text-xl">•</span>
+                                    <span><strong>5-7 anos:</strong> Programação desplugada com cartões temáticos</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-blue-500 mr-3 text-xl">•</span>
+                                    <span><strong>8-10 anos:</strong> Programação visual com sensores reais</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-green-500 mr-3 text-xl">•</span>
+                                    <span><strong>11-13 anos:</strong> Programação textual com montagem física</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-orange-500 mr-3 text-xl">•</span>
+                                    <span><strong>14+ anos:</strong> Programação profissional com projetos reais</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-white p-6 rounded-xl shadow-lg">
+                            <h4 class="text-2xl font-bold text-gray-800 mb-4">🌟 Por que é Revolucionário</h4>
+                            <ul class="space-y-3 text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="text-purple-500 mr-3 text-xl">•</span>
+                                    <span>Cada idade usa o método mais adequado ao desenvolvimento</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-purple-500 mr-3 text-xl">•</span>
+                                    <span>Transição suave entre os métodos conforme a criança cresce</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-purple-500 mr-3 text-xl">•</span>
+                                    <span>Temas atuais (sustentabilidade, tecnologia) conectam com o mundo real</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-purple-500 mr-3 text-xl">•</span>
+                                    <span>Certificação reconhece o progresso em cada etapa</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gradient-to-r from-purple-200 to-blue-200 p-6 rounded-xl">
+                        <h4 class="text-2xl font-bold text-gray-800 mb-4 text-center">💡 Frase para Usar com os Pais</h4>
+                        <p class="text-lg text-gray-700 text-center italic">
+                            "Nosso método é único porque não força a criança a 'pular etapas'. Cada idade tem sua forma natural de aprender, 
+                            e nós respeitamos isso. É como aprender a andar antes de correr - cada passo é importante e tem seu momento certo!"
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Como Explicar Programação para Crianças -->
+    <section class="py-16 bg-gradient-to-br from-yellow-50 via-orange-50 to-red-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold text-gray-800 mb-6">🎯 Como Explicar Programação para Crianças</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Use essas analogias simples para que qualquer criança entenda o que é programação!
+                </p>
+            </div>
+
+            <!-- Analogias Simples -->
+            <div class="max-w-6xl mx-auto mb-16">
+                <div class="bg-white rounded-2xl shadow-xl p-8 mb-8">
+                    <h3 class="text-3xl font-bold text-gray-800 mb-8 text-center">🧠 Programação é como dar instruções!</h3>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 mb-8">
+                        <div class="bg-gradient-to-br from-blue-100 to-cyan-100 p-6 rounded-xl">
+                            <div class="text-center mb-4">
+                                <div class="text-6xl mb-4">🥪</div>
+                                <h4 class="text-2xl font-bold text-gray-800">Fazer um Sanduíche</h4>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="bg-white p-3 rounded-lg shadow-sm">
+                                    <p class="font-semibold text-blue-600">1. Pegue 2 fatias de pão</p>
+                                </div>
+                                <div class="bg-white p-3 rounded-lg shadow-sm">
+                                    <p class="font-semibold text-blue-600">2. Passe manteiga no pão</p>
+                                </div>
+                                <div class="bg-white p-3 rounded-lg shadow-sm">
+                                    <p class="font-semibold text-blue-600">3. Coloque presunto e queijo</p>
+                                </div>
+                                <div class="bg-white p-3 rounded-lg shadow-sm">
+                                    <p class="font-semibold text-blue-600">4. Feche o sanduíche</p>
+                                </div>
+                            </div>
+                            <p class="text-center mt-4 text-gray-600 font-semibold">
+                                "Assim como você dá instruções para fazer um sanduíche, programar é dar instruções para o computador!"
+                            </p>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-green-100 to-emerald-100 p-6 rounded-xl">
+                            <div class="text-center mb-4">
+                                <div class="text-6xl mb-4">🤖</div>
+                                <h4 class="text-2xl font-bold text-gray-800">Programar um Robô</h4>
+                            </div>
+                            <div class="space-y-3">
+                                <div class="bg-white p-3 rounded-lg shadow-sm">
+                                    <p class="font-semibold text-green-600">1. Ande 3 passos para frente</p>
+                                </div>
+                                <div class="bg-white p-3 rounded-lg shadow-sm">
+                                    <p class="font-semibold text-green-600">2. Vire à direita</p>
+                                </div>
+                                <div class="bg-white p-3 rounded-lg shadow-sm">
+                                    <p class="font-semibold text-green-600">3. Ande 2 passos para frente</p>
+                                </div>
+                                <div class="bg-white p-3 rounded-lg shadow-sm">
+                                    <p class="font-semibold text-green-600">4. Pegue o objeto</p>
+                                </div>
+                            </div>
+                            <p class="text-center mt-4 text-gray-600 font-semibold">
+                                "O robô só faz exatamente o que você mandar. Se esquecer um passo, ele não vai funcionar!"
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-r from-purple-100 to-pink-100 p-6 rounded-xl">
+                        <h4 class="text-2xl font-bold text-gray-800 mb-4 text-center">💡 Dica para Vendedores</h4>
+                        <p class="text-lg text-gray-700 text-center">
+                            "Programação é como ensinar seu brinquedo favorito a fazer coisas incríveis! 
+                            Você dá as instruções e ele obedece certinho. Quanto mais instruções você souber dar, 
+                            mais coisas legais ele consegue fazer!"
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Evolução da Programação por Idade -->
+                <div class="bg-white rounded-2xl shadow-xl p-8">
+                    <h3 class="text-3xl font-bold text-gray-800 mb-8 text-center">📈 Como a Programação Evolui com a Idade</h3>
+                    
+                    <div class="space-y-8">
+                        <!-- 5-7 anos -->
+                        <div class="bg-gradient-to-r from-pink-50 to-purple-50 p-6 rounded-xl border-l-4 border-pink-400">
+                            <div class="flex items-center mb-4">
+                                <div class="text-4xl mr-4">👶</div>
+                                <div>
+                                    <h4 class="text-2xl font-bold text-gray-800">5-7 anos - FirstBot</h4>
+                                    <p class="text-pink-600 font-semibold">Programação com Cartões (sem computador)</p>
+                                </div>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h5 class="font-bold text-gray-800 mb-3">🎴 Como funciona:</h5>
+                                    <ul class="space-y-2 text-gray-600">
+                                        <li>• Cartões coloridos com desenhos</li>
+                                        <li>• Cada cartão = uma ação (andar, virar, parar)</li>
+                                        <li>• Criança coloca cartões em sequência</li>
+                                        <li>• Robô executa os comandos dos cartões</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-gray-800 mb-3">🎯 Exemplo prático:</h5>
+                                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                                        <p class="text-sm text-gray-600 mb-2">Sequência de cartões:</p>
+                                        <div class="flex space-x-2 mb-2">
+                                            <div class="bg-green-200 px-2 py-1 rounded text-xs">▶️ Andar</div>
+                                            <div class="bg-blue-200 px-2 py-1 rounded text-xs">↩️ Virar</div>
+                                            <div class="bg-green-200 px-2 py-1 rounded text-xs">▶️ Andar</div>
+                                            <div class="bg-red-200 px-2 py-1 rounded text-xs">⏹️ Parar</div>
+                                        </div>
+                                        <p class="text-xs text-gray-500">Resultado: Robô anda, vira, anda e para!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 8-10 anos -->
+                        <div class="bg-gradient-to-r from-blue-50 to-cyan-50 p-6 rounded-xl border-l-4 border-blue-400">
+                            <div class="flex items-center mb-4">
+                                <div class="text-4xl mr-4">🧒</div>
+                                <div>
+                                    <h4 class="text-2xl font-bold text-gray-800">8-10 anos - OneBot</h4>
+                                    <p class="text-blue-600 font-semibold">Programação em Blocos (com computador)</p>
+                                </div>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h5 class="font-bold text-gray-800 mb-3">🧩 Como funciona:</h5>
+                                    <ul class="space-y-2 text-gray-600">
+                                        <li>• Blocos coloridos na tela do computador</li>
+                                        <li>• Arrastar e soltar blocos como peças de LEGO</li>
+                                        <li>• Cada bloco = uma função (mover, girar, acender LED)</li>
+                                        <li>• Usar sensores (luz, som, toque)</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-gray-800 mb-3">🎯 Exemplo prático:</h5>
+                                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                                        <p class="text-sm text-gray-600 mb-2">Programa em blocos:</p>
+                                        <div class="space-y-1 mb-2">
+                                            <div class="bg-yellow-200 px-2 py-1 rounded text-xs">🔄 Repetir para sempre</div>
+                                            <div class="bg-green-200 px-2 py-1 rounded text-xs ml-4">🚶 Se sensor detectar movimento</div>
+                                            <div class="bg-red-200 px-2 py-1 rounded text-xs ml-8">💡 Acender LED vermelho</div>
+                                            <div class="bg-blue-200 px-2 py-1 rounded text-xs ml-8">🔊 Tocar som de alarme</div>
+                                        </div>
+                                        <p class="text-xs text-gray-500">Resultado: Alarme que detecta movimento!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 11-13 anos -->
+                        <div class="bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-xl border-l-4 border-green-400">
+                            <div class="flex items-center mb-4">
+                                <div class="text-4xl mr-4">👨‍💻</div>
+                                <div>
+                                    <h4 class="text-2xl font-bold text-gray-800">11-13 anos - TechBot</h4>
+                                    <p class="text-green-600 font-semibold">Programação baseada em Linguagem C</p>
+                                </div>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h5 class="font-bold text-gray-800 mb-3">⚙️ Como funciona:</h5>
+                                    <ul class="space-y-2 text-gray-600">
+                                        <li>• Escrever comandos com palavras (como inglês simples)</li>
+                                        <li>• Usar parafusos e ferramentas reais</li>
+                                        <li>• Montar circuitos eletrônicos</li>
+                                        <li>• Programas mais complexos e poderosos</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-gray-800 mb-3">🎯 Exemplo prático:</h5>
+                                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                                        <p class="text-sm text-gray-600 mb-2">Código simples:</p>
+                                        <div class="bg-gray-100 p-2 rounded text-xs font-mono mb-2">
+                                            <div>while (true) {</div>
+                                            <div>&nbsp;&nbsp;if (sensor.detectMovement()) {</div>
+                                            <div>&nbsp;&nbsp;&nbsp;&nbsp;led.turnOn();</div>
+                                            <div>&nbsp;&nbsp;&nbsp;&nbsp;buzzer.beep();</div>
+                                            <div>&nbsp;&nbsp;}</div>
+                                            <div>}</div>
+                                        </div>
+                                        <p class="text-xs text-gray-500">Resultado: Sistema de segurança profissional!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 14+ anos -->
+                        <div class="bg-gradient-to-r from-orange-50 to-red-50 p-6 rounded-xl border-l-4 border-orange-400">
+                            <div class="flex items-center mb-4">
+                                <div class="text-4xl mr-4">🚀</div>
+                                <div>
+                                    <h4 class="text-2xl font-bold text-gray-800">14+ anos - AutoBot</h4>
+                                    <p class="text-orange-600 font-semibold">Programação Profissional (Arduino, C#, Processing)</p>
+                                </div>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <h5 class="font-bold text-gray-800 mb-3">💡 Como funciona:</h5>
+                                    <ul class="space-y-2 text-gray-600">
+                                        <li>• Linguagens de programação reais</li>
+                                        <li>• Criar aplicativos para celular</li>
+                                        <li>• Conectar com internet (IoT)</li>
+                                        <li>• Projetos como os profissionais fazem</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-bold text-gray-800 mb-3">🎯 Exemplo prático:</h5>
+                                    <div class="bg-white p-4 rounded-lg shadow-sm">
+                                        <p class="text-sm text-gray-600 mb-2">Projeto completo:</p>
+                                        <div class="space-y-1 mb-2">
+                                            <div class="bg-blue-200 px-2 py-1 rounded text-xs">📱 App no celular</div>
+                                            <div class="bg-green-200 px-2 py-1 rounded text-xs">🌐 Conecta com WiFi</div>
+                                            <div class="bg-yellow-200 px-2 py-1 rounded text-xs">🌡️ Lê temperatura</div>
+                                            <div class="bg-purple-200 px-2 py-1 rounded text-xs">📊 Mostra gráficos</div>
+                                        </div>
+                                        <p class="text-xs text-gray-500">Resultado: Estação meteorológica completa!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frases para Usar com os Pais -->
+                <div class="bg-gradient-to-r from-indigo-100 to-purple-100 p-8 rounded-2xl shadow-xl mt-8">
+                    <h3 class="text-3xl font-bold text-gray-800 mb-6 text-center">💬 Frases Mágicas para Usar com os Pais</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-4">
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <p class="text-gray-700 italic">"Programação é como ensinar o computador a ser seu assistente pessoal!"</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <p class="text-gray-700 italic">"Seu filho vai aprender a resolver problemas como um detetive, passo a passo!"</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <p class="text-gray-700 italic">"É como aprender uma nova língua, mas que fala com máquinas!"</p>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <p class="text-gray-700 italic">"Programação desenvolve o raciocínio lógico melhor que qualquer jogo de tabuleiro!"</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <p class="text-gray-700 italic">"Seu filho vai criar seus próprios jogos e brinquedos inteligentes!"</p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow-sm">
+                                <p class="text-gray-700 italic">"É como ter superpoderes para controlar a tecnologia!"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Temas das Aulas -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-4">🌍 Temas das Aulas</h2>
+            <p class="text-center text-gray-600 mb-12 text-lg">Aprendizado com Consciência</p>
+            <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">
+                Todos os cursos são baseados em temas atuais que ajudam os alunos a desenvolverem consciência social e ambiental, 
+                enquanto aprendem tecnologia.
+            </p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center card-hover">
+                    <div class="text-4xl mb-4">🌱</div>
+                    <h3 class="font-semibold text-gray-800">Meio ambiente e sustentabilidade</h3>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center card-hover">
+                    <div class="text-4xl mb-4">🚗</div>
+                    <h3 class="font-semibold text-gray-800">Transportes e mobilidade</h3>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center card-hover">
+                    <div class="text-4xl mb-4">⚡</div>
+                    <h3 class="font-semibold text-gray-800">Energia limpa e renovável</h3>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center card-hover">
+                    <div class="text-4xl mb-4">🏠</div>
+                    <h3 class="font-semibold text-gray-800">Tecnologia para o dia a dia</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Por que escolher -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Por que escolher nossos cursos?</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">📚</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Material Exclusivo</h3>
+                    <p class="text-gray-600">Apostilas divididas em 3 níveis: Inicial, Intermediário e Avançado.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">📅</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Aulas Semanais</h3>
+                    <p class="text-gray-600">2 horas por semana com acompanhamento personalizado.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">🏆</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Certificação</h3>
+                    <p class="text-gray-600">Certificado ao final de cada módulo concluído.</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">📈</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Evolução Contínua</h3>
+                    <p class="text-gray-600">Prova prática no final de cada nível para evolução no curso.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exercícios de Treinamento -->
+    <section id="exercicios" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-4">Exercícios de Treinamento</h2>
+            <p class="text-center text-gray-600 mb-12 text-lg">
+                Pratique lógica de programação e conhecimento sobre nossos cursos!
+            </p>
+            
+            <!-- Seletor de Tipo de Exercício -->
+            <div class="max-w-4xl mx-auto mb-8">
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 text-center">Escolha o Tipo de Exercício</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <button onclick="startQuiz('knowledge')" class="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white p-6 rounded-xl transition-all duration-300 transform hover:scale-105">
+                            <div class="text-4xl mb-3">📚</div>
+                            <h4 class="text-xl font-bold mb-2">Conhecimento dos Cursos</h4>
+                            <p class="text-blue-100">Teste seus conhecimentos sobre preços, idades e metodologia MYROBOT</p>
+                        </button>
+                        <button onclick="startQuiz('logic')" class="bg-gradient-to-r from-green-500 to-teal-600 hover:from-green-600 hover:to-teal-700 text-white p-6 rounded-xl transition-all duration-300 transform hover:scale-105">
+                            <div class="text-4xl mb-3">🧠</div>
+                            <h4 class="text-xl font-bold mb-2">Lógica de Programação</h4>
+                            <p class="text-green-100">Exercícios simples de lógica que as crianças aprendem nos cursos</p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div id="quiz-container" class="bg-white rounded-xl shadow-lg p-8">
+                    <div class="mb-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-sm text-gray-500">Questão <span id="current-question">1</span> de <span id="total-questions">5</span></span>
+                            <span class="text-sm text-gray-500">Pontuação: <span id="score">0</span></span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div id="progress-bar" class="bg-blue-600 h-2 rounded-full transition-all duration-300" style="width: 20%"></div>
+                        </div>
+                    </div>
+                    
+                    <div id="question-container">
+                        <h3 id="question-text" class="text-2xl font-bold text-gray-800 mb-6">
+                            Qual é o curso ideal para crianças pequenas que nunca tiveram contato com programação?
+                        </h3>
+                        
+                        <div id="options-container" class="space-y-4">
+                            <button class="quiz-option w-full p-4 text-left border-2 border-gray-200 rounded-lg" onclick="selectOption(0)">
+                                A) OneBot - Robótica com Programação em Blocos
+                            </button>
+                            <button class="quiz-option w-full p-4 text-left border-2 border-gray-200 rounded-lg" onclick="selectOption(1)">
+                                B) FirstBot - Iniciação à Programação com Cartões
+                            </button>
+                            <button class="quiz-option w-full p-4 text-left border-2 border-gray-200 rounded-lg" onclick="selectOption(2)">
+                                C) TechBot - Robótica com Componentes Reais
+                            </button>
+                            <button class="quiz-option w-full p-4 text-left border-2 border-gray-200 rounded-lg" onclick="selectOption(3)">
+                                D) AutoBot - Robótica Avançada com Arduino
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 flex justify-between">
+                        <button id="prev-btn" onclick="previousQuestion()" class="bg-gray-300 hover:bg-gray-400 text-gray-700 px-6 py-2 rounded-lg transition-colors" disabled>
+                            Anterior
+                        </button>
+                        <button id="next-btn" onclick="nextQuestion()" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors" disabled>
+                            Próxima
+                        </button>
+                    </div>
+                </div>
+                
+                <div id="results-container" class="bg-white rounded-xl shadow-lg p-8 mt-8 hidden">
+                    <div class="text-center">
+                        <div class="text-6xl mb-4">🎉</div>
+                        <h3 class="text-3xl font-bold text-gray-800 mb-4">Parabéns!</h3>
+                        <p class="text-xl text-gray-600 mb-6">
+                            Você completou o treinamento com <span id="final-score" class="font-bold text-blue-600"></span> de acertos!
+                        </p>
+                        <button onclick="restartQuiz()" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors">
+                            Refazer Treinamento
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aulas Experimentais -->
+    <section id="experimental" class="py-16 bg-gradient-to-br from-purple-50 via-blue-50 to-cyan-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl font-bold text-gray-800 mb-6">✨ Aulas Experimentais</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Nossas aulas experimentais são projetadas para proporcionar uma experiência de aprendizado única e interativa para as crianças.
+                </p>
+            </div>
+            
+            <!-- Requisitos -->
+            <div class="max-w-6xl mx-auto mb-16">
+                <div class="bg-white rounded-2xl shadow-xl p-8 mb-8">
+                    <h3 class="text-3xl font-bold text-gray-800 mb-8 text-center">📋 Requisitos para Aulas Experimentais</h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center p-6 bg-gradient-to-br from-blue-100 to-blue-200 rounded-xl">
+                            <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-2xl text-white">📍</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-800 mb-2">Localização</h4>
+                            <p class="text-gray-600">Verificar se o aluno é de <strong>Campinas, SP</strong></p>
+                        </div>
+                        <div class="text-center p-6 bg-gradient-to-br from-green-100 to-green-200 rounded-xl">
+                            <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-2xl text-white">🎂</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-800 mb-2">Idade</h4>
+                            <p class="text-gray-600">Verificar se a criança tem <strong>mais de 5 anos</strong></p>
+                        </div>
+                        <div class="text-center p-6 bg-gradient-to-br from-purple-100 to-purple-200 rounded-xl">
+                            <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <span class="text-2xl text-white">✅</span>
+                            </div>
+                            <h4 class="text-xl font-bold text-gray-800 mb-2">Disponibilidade</h4>
+                            <p class="text-gray-600">Verificar se há <strong>vagas disponíveis</strong> na turma</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Horários -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 mb-8">
+                    <h3 class="text-3xl font-bold text-gray-800 mb-8 text-center">🕐 Horários das Aulas</h3>
+                    <div class="bg-gradient-to-r from-pink-100 to-orange-100 p-6 rounded-xl mb-6">
+                        <div class="flex items-center justify-center mb-4">
+                            <span class="text-3xl mr-3">💡</span>
+                            <p class="text-lg font-semibold text-gray-800">Dica Especial para Vendedores</p>
+                        </div>
+                        <p class="text-center text-gray-700">
+                            Para que a criança possa aproveitar melhor a experiência, <strong>recomendo sempre marcar segunda e terça-feira</strong> que são dias mais tranquilos! ❤️
+                        </p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Segunda a Sexta -->
+                        <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-6 rounded-xl border-2 border-blue-200">
+                            <h4 class="text-xl font-bold text-gray-800 mb-4 text-center">📅 Segunda-feira</h4>
+                            <div class="space-y-3">
+                                <div class="bg-white p-3 rounded-lg shadow-sm">
+                                    <p class="font-semibold text-blue-600">14h00 - 16h00</p>
+                                    <p class="text-sm text-gray-600">Aula 1 (2h)</p>
+                                </div>
+                                <div class="bg-white p-3 rounded-lg shadow-sm">
+                                    <p class="font-semibold text-blue-600">16h30 - 18h30</p>
+                                    <p class="text-sm text-gray-600">Aula 2 (2h)</p>
+                                </div>
+                                <div class="bg-yellow-100 p-3 rounded-lg shadow-sm">
+                                    <p class="font-semibold text-orange-600">19h00 - 19h30</p>
+                                    <p class="text-sm text-gray-600">Caneta 3D (extra)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-green-50 to-emerald-100 p-6 rounded-xl border-2 border-green-200">
+                            <h4 class="text-xl font-bold text-gray-800 mb-4 text-center">📅 Terça-feira</h4>
+                            <div class="space-y-3">
+                                <div class="bg-white p-3 rounded-lg shadow-sm">
+                                    <p class="font-semibold text-green-600">14h00 - 16h00</p>
+                                    <p class="text-sm text-gray-600">Aula 1 (2h)</p>
+                                </div>
+                                <div class="bg-white p-3 rounded-lg shadow-sm">
+                                    <p class="font-semibold text-green-600">16h30 - 18h30</p>
+                                    <p class="text-sm text-gray-600">Aula 2 (2h)</p>
+                                </div>
+                                <div class="bg-yellow-100 p-3 rounded-lg shadow-sm">
+                                    <p class="font-semibold text-orange-600">19h00 - 19h30</p>
+                                    <p class="text-sm text-gray-600">Caneta 3D (extra)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-purple-50 to-violet-100 p-6 rounded-xl border-2 border-purple-200">
+                            <h4 class="text-xl font-bold text-gray-800 mb-4 text-center">📅 Quarta-feira</h4>
+                            <div class="space-y-3">
+                                <div class="bg-white p-3 rounded-lg shadow-sm">
+                                    <p class="font-semibold text-purple-600">14h00 - 16h00</p>
+                                    <p class="text-sm text-gray-600">Aula 1 (2h)</p>
+                                </div>
+                                <div class="bg-white p-3 rounded-lg shadow-sm">
+                                    <p class="font-semibold text-purple-600">16h30 - 18h30</p>
+                                    <p class="text-sm text-gray-600">Aula 2 (2h)</p>
+                                </div>
+                                <div class="bg-yellow-100 p-3 rounded-lg shadow-sm">
+                                    <p class="font-semibold text-orange-600">19h00 - 19h30</p>
+                                    <p class="text-sm text-gray-600">Caneta 3D (extra)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-red-50 to-pink-100 p-6 rounded-xl border-2 border-red-200">
+                            <h4 class="text-xl font-bold text-gray-800 mb-4 text-center">📅 Quinta-feira</h4>
+                            <div class="space-y-3">
+                                <div class="bg-white p-3 rounded-lg shadow-sm">
+                                    <p class="font-semibold text-red-600">14h00 - 16h00</p>
+                                    <p class="text-sm text-gray-600">Aula 1 (2h)</p>
+                                </div>
+                                <div class="bg-white p-3 rounded-lg shadow-sm">
+                                    <p class="font-semibold text-red-600">16h30 - 18h30</p>
+                                    <p class="text-sm text-gray-600">Aula 2 (2h)</p>
+                                </div>
+                                <div class="bg-yellow-100 p-3 rounded-lg shadow-sm">
+                                    <p class="font-semibold text-orange-600">19h00 - 19h30</p>
+                                    <p class="text-sm text-gray-600">Caneta 3D (extra)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-yellow-50 to-amber-100 p-6 rounded-xl border-2 border-yellow-200">
+                            <h4 class="text-xl font-bold text-gray-800 mb-4 text-center">📅 Sexta-feira</h4>
+                            <div class="space-y-3">
+                                <div class="bg-white p-3 rounded-lg shadow-sm">
+                                    <p class="font-semibold text-yellow-600">14h00 - 16h00</p>
+                                    <p class="text-sm text-gray-600">Aula 1 (2h)</p>
+                                </div>
+                                <div class="bg-white p-3 rounded-lg shadow-sm">
+                                    <p class="font-semibold text-yellow-600">16h30 - 18h30</p>
+                                    <p class="text-sm text-gray-600">Aula 2 (2h)</p>
+                                </div>
+                                <div class="bg-yellow-100 p-3 rounded-lg shadow-sm">
+                                    <p class="font-semibold text-orange-600">19h00 - 19h30</p>
+                                    <p class="text-sm text-gray-600">Caneta 3D (extra)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-gradient-to-br from-cyan-50 to-teal-100 p-6 rounded-xl border-2 border-cyan-200">
+                            <h4 class="text-xl font-bold text-gray-800 mb-4 text-center">📅 Sábado</h4>
+                            <div class="space-y-3">
+                                <div class="bg-white p-3 rounded-lg shadow-sm">
+                                    <p class="font-semibold text-cyan-600">13h00 - 15h00</p>
+                                    <p class="text-sm text-gray-600">Aula 1 (2h)</p>
+                                </div>
+                                <div class="bg-white p-3 rounded-lg shadow-sm">
+                                    <p class="font-semibold text-cyan-600">15h30 - 17h30</p>
+                                    <p class="text-sm text-gray-600">Aula 2 (2h)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- O que esperar -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 mb-8">
+                    <h3 class="text-3xl font-bold text-gray-800 mb-8 text-center">🌟 O que você pode esperar de nossas aulas experimentais?</h3>
+                    <div class="grid md:grid-cols-3 gap-6">
+                        <div class="text-center p-6 bg-gradient-to-br from-pink-100 to-rose-200 rounded-xl">
+                            <div class="text-4xl mb-4">🎮</div>
+                            <h4 class="text-lg font-bold text-gray-800 mb-2">Abordagem Interativa</h4>
+                            <p class="text-gray-600">Uma abordagem interativa e divertida para o aprendizado.</p>
+                        </div>
+                        <div class="text-center p-6 bg-gradient-to-br from-blue-100 to-indigo-200 rounded-xl">
+                            <div class="text-4xl mb-4">🧠</div>
+                            <h4 class="text-lg font-bold text-gray-800 mb-2">Desenvolvimento de Habilidades</h4>
+                            <p class="text-gray-600">Oportunidades para desenvolver resolução de problemas e pensamento crítico.</p>
+                        </div>
+                        <div class="text-center p-6 bg-gradient-to-br from-green-100 to-emerald-200 rounded-xl">
+                            <div class="text-4xl mb-4">🏠</div>
+                            <h4 class="text-lg font-bold text-gray-800 mb-2">Ambiente Acolhedor</h4>
+                            <p class="text-gray-600">Um ambiente seguro e acolhedor para as crianças explorarem e aprenderem.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div class="bg-white p-8 rounded-2xl shadow-xl border-l-4 border-green-500">
+                        <h4 class="text-2xl font-bold text-gray-800 mb-6">✅ O que FAZER na Aula Experimental</h4>
+                        <ul class="space-y-4 text-gray-600">
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-3 text-xl">•</span>
+                                <span>Apresentar o material de forma lúdica e interativa</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-3 text-xl">•</span>
+                                <span>Deixar a criança montar um projeto simples</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-3 text-xl">•</span>
+                                <span>Explicar os benefícios pedagógicos para os pais</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-3 text-xl">•</span>
+                                <span>Mostrar exemplos de projetos de outros alunos</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-3 text-xl">•</span>
+                                <span>Criar um ambiente acolhedor e divertido</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-2xl shadow-xl border-l-4 border-red-500">
+                        <h4 class="text-2xl font-bold text-gray-800 mb-6">❌ O que NÃO FAZER na Aula Experimental</h4>
+                        <ul class="space-y-4 text-gray-600">
+                            <li class="flex items-start">
+                                <span class="text-red-500 mr-3 text-xl">•</span>
+                                <span>Focar apenas no preço do curso</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-500 mr-3 text-xl">•</span>
+                                <span>Pressionar para fechamento imediato</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-500 mr-3 text-xl">•</span>
+                                <span>Usar linguagem técnica demais</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-500 mr-3 text-xl">•</span>
+                                <span>Deixar a criança apenas observando</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-500 mr-3 text-xl">•</span>
+                                <span>Ignorar as dúvidas dos pais</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-r from-yellow-100 to-orange-100 p-8 rounded-2xl shadow-xl">
+                    <h4 class="text-3xl font-bold text-gray-800 mb-8 text-center">📋 Roteiro da Aula Experimental (60 minutos)</h4>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-blue-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg">1</div>
+                                <div>
+                                    <h5 class="text-xl font-bold text-gray-800">Boas-vindas e Apresentação</h5>
+                                    <p class="text-blue-600 font-semibold mb-2">10 minutos</p>
+                                    <p class="text-gray-600">Receba a família, apresente o espaço e explique brevemente a metodologia MYROBOT.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-green-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg">2</div>
+                                <div>
+                                    <h5 class="text-xl font-bold text-gray-800">Atividade Prática</h5>
+                                    <p class="text-green-600 font-semibold mb-2">30 minutos</p>
+                                    <p class="text-gray-600">Deixe a criança montar um projeto adequado à sua idade, com sua orientação.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-6">
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-purple-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg">3</div>
+                                <div>
+                                    <h5 class="text-xl font-bold text-gray-800">Apresentação dos Cursos</h5>
+                                    <p class="text-purple-600 font-semibold mb-2">15 minutos</p>
+                                    <p class="text-gray-600">Mostre os diferentes níveis, materiais e benefícios de cada curso.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-orange-600 text-white rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg">4</div>
+                                <div>
+                                    <h5 class="text-xl font-bold text-gray-800">Conversa com os Pais</h5>
+                                    <p class="text-orange-600 font-semibold mb-2">5 minutos</p>
+                                    <p class="text-gray-600">Tire dúvidas, apresente valores e formas de pagamento.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex items-center justify-center space-x-3 mb-6">
+                <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center">
+                    <span class="text-2xl">🤖</span>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold">MYROBOT</h3>
+                    <p class="text-blue-100">Cursos de Robótica e Programação</p>
+                </div>
+            </div>
+            <p class="text-blue-100 mb-4">
+                Transformando o futuro através da educação tecnológica
+            </p>
+            <p class="text-blue-200 text-sm">
+                © 2024 MYROBOT. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Quiz Data
+        const knowledgeQuizData = [
+            {
+                question: "Qual é o curso ideal para crianças pequenas que nunca tiveram contato com programação?",
+                options: [
+                    "A) OneBot - Robótica com Programação em Blocos",
+                    "B) FirstBot - Iniciação à Programação com Cartões",
+                    "C) TechBot - Robótica com Componentes Reais",
+                    "D) AutoBot - Robótica Avançada com Arduino"
+                ],
+                correct: 1,
+                explanation: "O FirstBot é especificamente desenvolvido para crianças pequenas, usando programação desplugada com cartões."
+            },
+            {
+                question: "Qual é a duração das aulas semanais dos cursos MYROBOT?",
+                options: [
+                    "A) 1 hora por semana",
+                    "B) 2 horas por semana",
+                    "C) 3 horas por semana",
+                    "D) 4 horas por semana"
+                ],
+                correct: 1,
+                explanation: "Todas as aulas têm duração de 2 horas semanais com acompanhamento personalizado."
+            },
+            {
+                question: "Qual curso utiliza Arduino e programação em C# e Processing?",
+                options: [
+                    "A) FirstBot",
+                    "B) OneBot",
+                    "C) TechBot",
+                    "D) AutoBot"
+                ],
+                correct: 3,
+                explanation: "O AutoBot é o curso mais avançado, utilizando Arduino, C# e Processing para projetos eletrônicos reais."
+            },
+            {
+                question: "Quantos volumes de apostilas cada curso possui?",
+                options: [
+                    "A) 2 volumes",
+                    "B) 3 volumes",
+                    "C) 4 volumes",
+                    "D) 5 volumes"
+                ],
+                correct: 1,
+                explanation: "Cada curso possui 3 volumes de apostilas: Inicial, Intermediário e Avançado."
+            },
+            {
+                question: "Qual é o principal diferencial da metodologia MYROBOT?",
+                options: [
+                    "A) Foco apenas na programação",
+                    "B) Aulas teóricas extensas",
+                    "C) Aprender brincando com projetos práticos",
+                    "D) Uso exclusivo de computadores"
+                ],
+                correct: 2,
+                explanation: "A metodologia MYROBOT combina diversão e aprendizado através de projetos práticos e temáticos."
+            },
+            {
+                question: "Qual é o valor do investimento mensal para os cursos principais?",
+                options: [
+                    "A) 12x de R$ 199",
+                    "B) 12x de R$ 249",
+                    "C) 12x de R$ 299",
+                    "D) 12x de R$ 349"
+                ],
+                correct: 2,
+                explanation: "Todos os cursos principais (FirstBot, OneBot, TechBot, AutoBot) custam 12x de R$ 299."
+            },
+            {
+                question: "Qual curso é recomendado para crianças de 8-10 anos?",
+                options: [
+                    "A) FirstBot",
+                    "B) OneBot",
+                    "C) TechBot",
+                    "D) AutoBot"
+                ],
+                correct: 1,
+                explanation: "O OneBot é específico para crianças de 8-10 anos, usando programação em blocos e sensores."
+            },
+            {
+                question: "O que diferencia o TechBot dos outros cursos?",
+                options: [
+                    "A) Usa apenas cartões coloridos",
+                    "B) Usa programação em blocos",
+                    "C) Usa ferramentas reais e parafusos",
+                    "D) Usa apenas Arduino"
+                ],
+                correct: 2,
+                explanation: "O TechBot introduz o uso de ferramentas reais, parafusos e componentes físicos."
+            },
+            {
+                question: "Qual é o curso de curta duração oferecido pela MYROBOT?",
+                options: [
+                    "A) FirstBot Express",
+                    "B) OneBot Rápido",
+                    "C) Caneta 3D",
+                    "D) TechBot Mini"
+                ],
+                correct: 2,
+                explanation: "A Caneta 3D é um curso especial de 1 mês (4 aulas) por R$ 299 pagamento único."
+            },
+            {
+                question: "Quais dias da semana são recomendados para aulas experimentais?",
+                options: [
+                    "A) Sábado e domingo",
+                    "B) Segunda e terça-feira",
+                    "C) Quinta e sexta-feira",
+                    "D) Qualquer dia é igual"
+                ],
+                correct: 1,
+                explanation: "Segunda e terça-feira são recomendados por serem dias mais tranquilos para a criança."
+            },
+            {
+                question: "Qual é a faixa etária do curso AutoBot?",
+                options: [
+                    "A) 5-7 anos",
+                    "B) 8-10 anos",
+                    "C) 11-13 anos",
+                    "D) 14+ anos"
+                ],
+                correct: 3,
+                explanation: "O AutoBot é para jovens de 14+ anos, sendo o nível mais avançado."
+            },
+            {
+                question: "O que os alunos recebem ao final de cada módulo?",
+                options: [
+                    "A) Apenas uma nota",
+                    "B) Um certificado",
+                    "C) Um troféu",
+                    "D) Uma medalha"
+                ],
+                correct: 1,
+                explanation: "Ao final de cada módulo, os alunos recebem certificados que reconhecem suas conquistas."
+            },
+            {
+                question: "Qual é o principal objetivo das aulas experimentais?",
+                options: [
+                    "A) Vender o curso imediatamente",
+                    "B) Mostrar apenas o preço",
+                    "C) Proporcionar experiência interativa",
+                    "D) Fazer propaganda da escola"
+                ],
+                correct: 2,
+                explanation: "As aulas experimentais visam proporcionar uma experiência interativa e divertida para a criança."
+            },
+            {
+                question: "Quantos temas principais baseiam os cursos MYROBOT?",
+                options: [
+                    "A) 2 temas",
+                    "B) 3 temas",
+                    "C) 4 temas",
+                    "D) 5 temas"
+                ],
+                correct: 2,
+                explanation: "Os cursos são baseados em 4 temas: meio ambiente, transportes, energia limpa e tecnologia do dia a dia."
+            },
+            {
+                question: "Qual é a duração recomendada para uma aula experimental?",
+                options: [
+                    "A) 30 minutos",
+                    "B) 45 minutos",
+                    "C) 60 minutos",
+                    "D) 90 minutos"
+                ],
+                correct: 2,
+                explanation: "A aula experimental deve durar 60 minutos, divididos em apresentação, prática, cursos e conversa."
+            }
+        ];
+
+        const logicQuizData = [
+            {
+                question: "🤖 O robô está na posição inicial. Qual sequência de comandos o leva até a estrela?",
+                visual: `
+                    <div class="bg-gray-100 p-6 rounded-lg mb-4">
+                        <div class="grid grid-cols-4 gap-2 max-w-xs mx-auto">
+                            <div class="w-12 h-12 bg-green-400 rounded flex items-center justify-center text-white font-bold">🤖</div>
+                            <div class="w-12 h-12 bg-gray-200 rounded"></div>
+                            <div class="w-12 h-12 bg-gray-200 rounded"></div>
+                            <div class="w-12 h-12 bg-yellow-400 rounded flex items-center justify-center">⭐</div>
+                        </div>
+                        <p class="text-center mt-2 text-sm text-gray-600">Robô precisa ir da esquerda para a direita</p>
+                    </div>
+                `,
+                options: [
+                    "A) Andar → Andar → Andar",
+                    "B) Andar → Andar",
+                    "C) Andar → Virar → Andar",
+                    "D) Virar → Andar → Andar"
+                ],
+                correct: 0,
+                explanation: "O robô precisa andar 3 casas para a direita para chegar na estrela."
+            },
+            {
+                question: "🔄 Qual é o resultado desta sequência de comandos repetida 3 vezes?",
+                visual: `
+                    <div class="bg-blue-50 p-6 rounded-lg mb-4">
+                        <div class="text-center">
+                            <div class="bg-blue-200 p-3 rounded-lg inline-block mb-2">
+                                <p class="font-bold">REPETIR 3 VEZES:</p>
+                                <p>1. Acender LED</p>
+                                <p>2. Esperar 1 segundo</p>
+                                <p>3. Apagar LED</p>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                options: [
+                    "A) LED fica aceso por 3 segundos",
+                    "B) LED pisca 3 vezes",
+                    "C) LED acende apenas 1 vez",
+                    "D) LED fica sempre apagado"
+                ],
+                correct: 1,
+                explanation: "A sequência acender-esperar-apagar repetida 3 vezes faz o LED piscar 3 vezes."
+            },
+            {
+                question: "🚦 Se o sensor detectar luz, o que acontece neste programa?",
+                visual: `
+                    <div class="bg-yellow-50 p-6 rounded-lg mb-4">
+                        <div class="text-center">
+                            <div class="bg-yellow-200 p-3 rounded-lg inline-block">
+                                <p class="font-bold">SE sensor detectar luz:</p>
+                                <p class="ml-4">→ Acender LED verde</p>
+                                <p class="font-bold">SENÃO:</p>
+                                <p class="ml-4">→ Acender LED vermelho</p>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                options: [
+                    "A) LED verde acende",
+                    "B) LED vermelho acende",
+                    "C) Ambos os LEDs acendem",
+                    "D) Nenhum LED acende"
+                ],
+                correct: 0,
+                explanation: "Como o sensor detectou luz, a condição é verdadeira, então o LED verde acende."
+            },
+            {
+                question: "🎵 Quantas vezes o buzzer vai tocar neste programa?",
+                visual: `
+                    <div class="bg-purple-50 p-6 rounded-lg mb-4">
+                        <div class="text-center">
+                            <div class="bg-purple-200 p-3 rounded-lg inline-block">
+                                <p class="font-bold">REPETIR 2 VEZES:</p>
+                                <p class="ml-4">→ Tocar buzzer</p>
+                                <p class="ml-4">→ Esperar</p>
+                                <p class="font-bold">DEPOIS:</p>
+                                <p>→ Tocar buzzer mais 1 vez</p>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                options: [
+                    "A) 1 vez",
+                    "B) 2 vezes", 
+                    "C) 3 vezes",
+                    "D) 4 vezes"
+                ],
+                correct: 2,
+                explanation: "O buzzer toca 2 vezes no loop, depois mais 1 vez fora do loop = 3 vezes total."
+            },
+            {
+                question: "🏠 O robô está em casa e quer ir ao parque. Qual caminho está correto?",
+                visual: `
+                    <div class="bg-green-50 p-6 rounded-lg mb-4">
+                        <div class="grid grid-cols-3 gap-2 max-w-xs mx-auto">
+                            <div class="w-12 h-12 bg-blue-400 rounded flex items-center justify-center">🏠</div>
+                            <div class="w-12 h-12 bg-gray-200 rounded"></div>
+                            <div class="w-12 h-12 bg-red-400 rounded flex items-center justify-center">❌</div>
+                            <div class="w-12 h-12 bg-gray-200 rounded"></div>
+                            <div class="w-12 h-12 bg-gray-200 rounded"></div>
+                            <div class="w-12 h-12 bg-gray-200 rounded"></div>
+                            <div class="w-12 h-12 bg-green-400 rounded flex items-center justify-center">🌳</div>
+                            <div class="w-12 h-12 bg-gray-200 rounded"></div>
+                            <div class="w-12 h-12 bg-gray-200 rounded"></div>
+                        </div>
+                        <p class="text-center mt-2 text-sm text-gray-600">🏠 = Casa | 🌳 = Parque | ❌ = Obstáculo</p>
+                    </div>
+                `,
+                options: [
+                    "A) Direita → Direita → Baixo → Baixo",
+                    "B) Baixo → Baixo → Direita → Direita", 
+                    "C) Direita → Baixo → Baixo → Direita",
+                    "D) Baixo → Direita → Baixo → Direita"
+                ],
+                correct: 3,
+                explanation: "Para evitar o obstáculo, o robô deve ir: Baixo → Direita → Baixo → Direita."
+            },
+            {
+                question: "🔢 Qual será o valor da variável 'contador' no final?",
+                visual: `
+                    <div class="bg-orange-50 p-6 rounded-lg mb-4">
+                        <div class="text-center">
+                            <div class="bg-orange-200 p-3 rounded-lg inline-block">
+                                <p>contador = 0</p>
+                                <p class="font-bold">REPETIR 4 VEZES:</p>
+                                <p class="ml-4">→ contador = contador + 1</p>
+                                <p class="font-bold">RESULTADO: contador = ?</p>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                options: [
+                    "A) 0",
+                    "B) 1",
+                    "C) 3", 
+                    "D) 4"
+                ],
+                correct: 3,
+                explanation: "O contador começa em 0 e é incrementado 4 vezes: 0+1+1+1+1 = 4."
+            },
+            {
+                question: "🌡️ O que acontece se a temperatura for 25°C neste programa?",
+                visual: `
+                    <div class="bg-red-50 p-6 rounded-lg mb-4">
+                        <div class="text-center">
+                            <div class="bg-red-200 p-3 rounded-lg inline-block">
+                                <p class="font-bold">SE temperatura > 30°C:</p>
+                                <p class="ml-4">→ Ligar ventilador</p>
+                                <p class="font-bold">SE temperatura < 15°C:</p>
+                                <p class="ml-4">→ Ligar aquecedor</p>
+                                <p class="font-bold">SENÃO:</p>
+                                <p class="ml-4">→ Não fazer nada</p>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                options: [
+                    "A) Liga o ventilador",
+                    "B) Liga o aquecedor",
+                    "C) Liga ventilador e aquecedor",
+                    "D) Não faz nada"
+                ],
+                correct: 3,
+                explanation: "25°C não é maior que 30°C nem menor que 15°C, então não faz nada."
+            },
+            {
+                question: "🎮 Qual sequência de botões faz o personagem chegar no tesouro?",
+                visual: `
+                    <div class="bg-indigo-50 p-6 rounded-lg mb-4">
+                        <div class="grid grid-cols-4 gap-1 max-w-xs mx-auto">
+                            <div class="w-10 h-10 bg-blue-400 rounded flex items-center justify-center text-xs">👤</div>
+                            <div class="w-10 h-10 bg-gray-300 rounded"></div>
+                            <div class="w-10 h-10 bg-gray-300 rounded"></div>
+                            <div class="w-10 h-10 bg-gray-300 rounded"></div>
+                            <div class="w-10 h-10 bg-gray-300 rounded"></div>
+                            <div class="w-10 h-10 bg-gray-300 rounded"></div>
+                            <div class="w-10 h-10 bg-gray-300 rounded"></div>
+                            <div class="w-10 h-10 bg-yellow-400 rounded flex items-center justify-center text-xs">💰</div>
+                            <div class="w-10 h-10 bg-gray-300 rounded"></div>
+                            <div class="w-10 h-10 bg-gray-300 rounded"></div>
+                            <div class="w-10 h-10 bg-gray-300 rounded"></div>
+                            <div class="w-10 h-10 bg-gray-300 rounded"></div>
+                        </div>
+                        <p class="text-center mt-2 text-sm text-gray-600">👤 = Personagem | 💰 = Tesouro</p>
+                    </div>
+                `,
+                options: [
+                    "A) ➡️ ➡️ ➡️ ⬇️ ⬇️",
+                    "B) ⬇️ ➡️ ➡️ ➡️ ⬇️",
+                    "C) ➡️ ⬇️ ➡️ ➡️ ⬇️",
+                    "D) ⬇️ ⬇️ ➡️ ➡️ ➡️"
+                ],
+                correct: 3,
+                explanation: "O personagem deve ir: Baixo → Baixo → Direita → Direita → Direita para chegar ao tesouro."
+            },
+            {
+                question: "🔄 Quantas vezes a palavra 'MYROBOT' será exibida?",
+                visual: `
+                    <div class="bg-teal-50 p-6 rounded-lg mb-4">
+                        <div class="text-center">
+                            <div class="bg-teal-200 p-3 rounded-lg inline-block">
+                                <p class="font-bold">REPETIR 5 VEZES:</p>
+                                <p class="ml-4">→ Mostrar "MYROBOT"</p>
+                                <p class="ml-4">→ Esperar 1 segundo</p>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                options: [
+                    "A) 1 vez",
+                    "B) 4 vezes",
+                    "C) 5 vezes",
+                    "D) 6 vezes"
+                ],
+                correct: 2,
+                explanation: "O comando 'Mostrar MYROBOT' está dentro do loop que repete 5 vezes."
+            },
+            {
+                question: "🚨 Quando o alarme vai tocar neste sistema de segurança?",
+                visual: `
+                    <div class="bg-pink-50 p-6 rounded-lg mb-4">
+                        <div class="text-center">
+                            <div class="bg-pink-200 p-3 rounded-lg inline-block">
+                                <p class="font-bold">SE (sensor movimento = SIM) E (hora > 22:00):</p>
+                                <p class="ml-4">→ Tocar alarme</p>
+                                <p class="font-bold">SENÃO:</p>
+                                <p class="ml-4">→ Não tocar</p>
+                            </div>
+                        </div>
+                    </div>
+                `,
+                options: [
+                    "A) Sempre que detectar movimento",
+                    "B) Sempre depois das 22:00",
+                    "C) Só quando detectar movimento E for depois das 22:00",
+                    "D) Nunca toca"
+                ],
+                correct: 2,
+                explanation: "O alarme só toca quando AMBAS as condições são verdadeiras: movimento detectado E depois das 22:00."
+            }
+        ];
+
+        let currentQuizType = 'knowledge';
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let selectedOption = -1;
+
+        function startQuiz(type) {
+            currentQuizType = type;
+            currentQuestionIndex = 0;
+            score = 0;
+            selectedOption = -1;
+            document.getElementById('score').textContent = '0';
+            document.querySelector('.max-w-4xl.mx-auto.mb-8').style.display = 'none';
+            document.getElementById('quiz-container').classList.remove('hidden');
+            document.getElementById('results-container').classList.add('hidden');
+            updateQuizDisplay();
+        }
+
+        function getCurrentQuizData() {
+            return currentQuizType === 'logic' ? logicQuizData : knowledgeQuizData;
+        }
+
+        function updateQuizDisplay() {
+            const quizData = getCurrentQuizData();
+            const question = quizData[currentQuestionIndex];
+            document.getElementById('current-question').textContent = currentQuestionIndex + 1;
+            document.getElementById('total-questions').textContent = quizData.length;
+            
+            // Update question text and visual if exists
+            const questionContainer = document.getElementById('question-container');
+            questionContainer.innerHTML = `
+                <h3 id="question-text" class="text-2xl font-bold text-gray-800 mb-6">
+                    ${question.question}
+                </h3>
+                ${question.visual || ''}
+                <div id="options-container" class="space-y-4">
+                    ${question.options.map((option, index) => `
+                        <button class="quiz-option w-full p-4 text-left border-2 border-gray-200 rounded-lg" onclick="selectOption(${index})">
+                            ${option}
+                        </button>
+                    `).join('')}
+                </div>
+            `;
+            
+            document.getElementById('progress-bar').style.width = `${((currentQuestionIndex + 1) / quizData.length) * 100}%`;
+            document.getElementById('prev-btn').disabled = currentQuestionIndex === 0;
+            document.getElementById('next-btn').disabled = true;
+            selectedOption = -1;
+        }
+
+        function selectOption(index) {
+            selectedOption = index;
+            const options = document.querySelectorAll('.quiz-option');
+            options.forEach((option, i) => {
+                option.classList.remove('selected', 'correct', 'incorrect');
+                if (i === index) {
+                    option.classList.add('selected');
+                }
+            });
+            document.getElementById('next-btn').disabled = false;
+        }
+
+        function nextQuestion() {
+            if (selectedOption === -1) return;
+            
+            const quizData = getCurrentQuizData();
+            const question = quizData[currentQuestionIndex];
+            const options = document.querySelectorAll('.quiz-option');
+            
+            // Show correct answer
+            options.forEach((option, i) => {
+                option.classList.remove('selected');
+                if (i === question.correct) {
+                    option.classList.add('correct');
+                } else if (i === selectedOption && i !== question.correct) {
+                    option.classList.add('incorrect');
+                }
+            });
+            
+            if (selectedOption === question.correct) {
+                score++;
+                document.getElementById('score').textContent = score;
+            }
+            
+            setTimeout(() => {
+                currentQuestionIndex++;
+                if (currentQuestionIndex < quizData.length) {
+                    updateQuizDisplay();
+                } else {
+                    showResults();
+                }
+            }, 2000);
+        }
+
+        function previousQuestion() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                updateQuizDisplay();
+            }
+        }
+
+        function showResults() {
+            const quizData = getCurrentQuizData();
+            document.getElementById('quiz-container').classList.add('hidden');
+            document.getElementById('results-container').classList.remove('hidden');
+            
+            const percentage = Math.round((score / quizData.length) * 100);
+            const quizTypeName = currentQuizType === 'logic' ? 'Lógica de Programação' : 'Conhecimento dos Cursos';
+            
+            document.getElementById('results-container').innerHTML = `
+                <div class="text-center">
+                    <div class="text-6xl mb-4">${percentage >= 70 ? '🎉' : '📚'}</div>
+                    <h3 class="text-3xl font-bold text-gray-800 mb-4">${percentage >= 70 ? 'Parabéns!' : 'Continue Estudando!'}</h3>
+                    <p class="text-xl text-gray-600 mb-2">
+                        Você completou o teste de <span class="font-bold text-blue-600">${quizTypeName}</span>
+                    </p>
+                    <p class="text-2xl font-bold mb-6">
+                        Pontuação: <span class="text-${percentage >= 70 ? 'green' : 'orange'}-600">${score}/${quizData.length} (${percentage}%)</span>
+                    </p>
+                    <div class="space-y-3 mb-8">
+                        <button onclick="restartQuiz()" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors mr-4">
+                            Refazer Este Teste
+                        </button>
+                        <button onclick="backToMenu()" class="bg-gray-600 hover:bg-gray-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors">
+                            Voltar ao Menu
+                        </button>
+                    </div>
+                    ${percentage >= 70 ? 
+                        '<p class="text-green-600 font-semibold">✅ Excelente! Você está pronto para aplicar esses conhecimentos!</p>' : 
+                        '<p class="text-orange-600 font-semibold">💡 Revise o conteúdo e tente novamente para melhorar sua pontuação!</p>'
+                    }
+                </div>
+            `;
+        }
+
+        function restartQuiz() {
+            currentQuestionIndex = 0;
+            score = 0;
+            selectedOption = -1;
+            document.getElementById('score').textContent = '0';
+            document.getElementById('quiz-container').classList.remove('hidden');
+            document.getElementById('results-container').classList.add('hidden');
+            updateQuizDisplay();
+        }
+
+        function backToMenu() {
+            document.getElementById('quiz-container').classList.add('hidden');
+            document.getElementById('results-container').classList.add('hidden');
+            document.querySelector('.max-w-4xl.mx-auto.mb-8').style.display = 'block';
+        }
+
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Quiz starts hidden, waiting for user selection
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'96bf243134e1f17d',t:'MTc1NDY1NzQ0Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
